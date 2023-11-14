@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassNameValue, twMerge } from 'tailwind-merge';
+import { ClassNameValue, twJoin } from 'tailwind-merge';
 import { Nav } from './Nav';
 
 interface Props {
@@ -8,8 +8,8 @@ interface Props {
 
 export function Header({ styles, }: Props) {
   const style = {
-    default: twMerge([
-      `  `,
+    default: twJoin([
+      ``,
       styles,
     ]),
   };

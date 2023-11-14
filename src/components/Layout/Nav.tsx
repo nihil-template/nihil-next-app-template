@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ClassNameValue, twMerge } from 'tailwind-merge';
+import { ClassNameValue, twJoin } from 'tailwind-merge';
 
 interface Props {
   styles?: ClassNameValue
@@ -8,7 +8,7 @@ interface Props {
 
 export function Nav({ styles, }: Props) {
   const style = {
-    default: twMerge([
+    default: twJoin([
       ``,
       styles,
     ]),

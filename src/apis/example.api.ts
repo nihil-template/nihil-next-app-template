@@ -1,16 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-type Board = {
-  id: number;
-  userId: number;
-  title: string;
-  content: string;
-};
-
-type EditBoard = {
-  index: number;
-  board: Partial<Board>;
-};
+import { Board, EditBoard } from '../types/api.types';
 
 // api를 만듬
 export const exampleApi = createApi({

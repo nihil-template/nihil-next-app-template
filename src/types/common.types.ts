@@ -1,11 +1,14 @@
-export interface ISiteData {
+export interface IConfigData {
   title: string;
   description: string;
   url: string;
   type: string;
   image: string;
   keywords: string;
-  author: string;
+  author: {
+    name: string;
+    url: string;
+  };
   version: string;
 }
 
@@ -21,8 +24,4 @@ export interface IMetaData {
   created?: string;
   updated?: string;
   image?: string;
-}
-
-export interface IAppLayoutProps extends IMetaData {
-  children: React.ReactNode;
 }

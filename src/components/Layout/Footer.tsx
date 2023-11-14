@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassNameValue, twMerge } from 'tailwind-merge';
+import { ClassNameValue, twJoin } from 'tailwind-merge';
 
 interface Props {
   styles?: ClassNameValue;
@@ -7,7 +7,7 @@ interface Props {
 
 export function Footer({ styles, }: Props) {
   const style = {
-    default: twMerge([
+    default: twJoin([
       ``,
       styles,
     ]),
