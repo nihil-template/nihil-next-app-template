@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 
 export class Nihil {
-  static uuid(index: number) {
+  static uuid(index?: number) {
     return uuid() + index;
   }
 
