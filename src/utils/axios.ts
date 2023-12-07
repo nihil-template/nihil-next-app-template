@@ -1,10 +1,9 @@
 import axios, { AxiosRequestConfig } from 'axios';
-
-const baseUrl = 'http://localhost:4000';
+import { configData } from '../data';
 
 const config: AxiosRequestConfig = {
   withCredentials: true,
-  baseURL: baseUrl,
+  baseURL: configData.baseApi,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -16,17 +15,17 @@ export const apiGet = async <T>(restApi: string, config?: AxiosRequestConfig) =>
   return api.get<T>(restApi, config);
 };
 
-export const apiPost = async <T, P>(restApi: string, data: P, config?: AxiosRequestConfig, multiPart?: 'multiPart') => {
-  if (multiPart) {
-    return api.post<T>(restApi, data, {
-      ...config,
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
-  } else {
-    return api.post<T>(restApi, data, config);
-  }
+export const apiPost = async <T, P>(restApi: string, data: P, config?: AxiosRequestConfig) => {
+  return api.post<T>(restApi, data, config);
+};
+
+export const apiPostMedia = async <T, P>(restApi: string, data: P, config?: AxiosRequestConfig) => {
+  return api.post<T>(restApi, data, {
+    ...config,
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
 };
 
 export const apiPatch = async <T, P>(restApi: string, data: P, config?: AxiosRequestConfig) => {

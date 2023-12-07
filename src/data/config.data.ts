@@ -1,17 +1,16 @@
-import { IConfigData } from '@/src/types/common.types';
-
-export const configData: IConfigData = {
-  title: '사이트 이름',
-  description: '사이트 설명',
-  keywords: '',
-  author: {
+export class configData {
+  static title = '사이트 이름';
+  static description = '사이트 설명';
+  static keywords = '';
+  static author = {
     name: 'NIHILncunia',
     url: 'https://github.com/NIHILncunia',
-  },
-  type: 'website',
-  url: process.env.NODE_ENV === 'development'
+  };
+  static type = 'website';
+  static url = process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
-    : '',
-  image: '',
-  version: 'v0.0.0',
-};
+    : '';
+  static image = '';
+  static version = 'v0.0.0';
+  static baseApi = `${this.url}/api`;
+}
